@@ -2,6 +2,8 @@
 
 # *DiagRL*: Optimizing Workflow in Evidence-based Diagnosis through Reinforcement Learning
 
+(**Under updating ...**)
+
 [![Notion](https://img.shields.io/badge/blog-black?style=for-the-badge&logo=notion)]() [![Arxiv](https://img.shields.io/badge/paper-A82F27?style=for-the-badge&logo=arxiv)]() [![Model](https://img.shields.io/badge/model-4169E1?style=for-the-badge&logo=huggingface)]() 
 
 </div>
@@ -21,3 +23,22 @@ We introduce DiagRL, focusing on clinical presentation-based diagnosis, which re
 
 
 
+## Data Resources
+
+**MIMIC-IV-note.** The official data repository is https://physionet.org/content/mimiciv/3.1/ . Pay attention to the ethics statement. Here we use a subset of it and further processed into the common, rare part.
+
+**PMC-Patients.** This data is fully achievable at https://huggingface.co/datasets/zhengyun21/PMC-Patients . We further process it to a more cleaned subset of common disease related patient records.
+
+**MedDialog.** This data is from https://huggingface.co/datasets/bigbio/meddialog . Users need to download through their provided scripts as the data is continuously growing. We further process it to fit our task.
+
+**RareArena.** This data is also public available at https://huggingface.co/datasets/THUMedInfo/RareArena . It is a subset of PMC-Patients that only contain the rare disease related patients. We use the official version.
+
+**RareBench.** This data is achievable at https://huggingface.co/datasets/chenxz/RareBench and we use the official version without further processing.
+
+**Mendeley.** This data is achievable at https://data.mendeley.com/datasets/rjgjh8hgrt/2 for free. we use the English version for zeroshot test.
+
+**Xinhua Hospital.** This is the in-house data for zero-shot only due to privacy concerns.
+
+
+
+## Retrieval Corpus
