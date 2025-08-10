@@ -42,3 +42,9 @@ We introduce DiagRL, focusing on clinical presentation-based diagnosis, which re
 
 
 ## Retrieval Corpus
+
+**Disease-symptom(phenotype) Guidelines.** It contains 16,371 common and rare diseases with their typical phenotypes. These diseases are from former public datasets and the ICD10data. We search these diseases for their introduction from authoritative resources such as [MAYO CLINIC](https://www.mayoclinic.org/diseases-conditions), [NCBI](https://www.ncbi.nlm.nih.gov/), etc. Then we use GPT-4o to summarize the main information of these contents to structural information guideline. The processed file could be found at: (to upload).
+
+**Patient Record Database.** We select a subset of former datasets as the multi-center patient records. We processed these data from their case report to extracted symptoms / phenotypes through GPT-4o and DeepSeek-V3. The processed database could be found at: (to upload)
+
+**Medical Retrieval Collection.** This is borrowed from [MedRAG](https://github.com/Teddy-XiongGZ/MedRAG). We sincerely appreciate their impressive work!
