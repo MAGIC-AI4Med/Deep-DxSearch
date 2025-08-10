@@ -14,7 +14,7 @@ We introduce DiagRL, focusing on clinical presentation-based diagnosis, which re
 - We open-source a large-scale **disease-symptom(phenotype) guideline** from authoritative resources
 - We open-source a processed **patient record database** collected from 5 datasets.
 - We open-source our **model checkpoint** which trained on multi-center diagnosis tasks in Huggingface. We hope this can Promote the development of agentic disease diagnosis.
+- Diagnostic workflow with retrieval corpus and performance compared to SOTAs here:
 
+![performOverview](D:\Joy\GithubDesktop\DiagRL\assets\performOverview.png)
 
-
-## Overview
