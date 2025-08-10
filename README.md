@@ -19,7 +19,21 @@ We introduce DiagRL, focusing on clinical presentation-based diagnosis, which re
 - We open-source our **model checkpoint** which trained on multi-center diagnosis tasks in Huggingface. We hope this can Promote the development of agentic disease diagnosis.
 - Diagnostic workflow with retrieval corpus and performance compared to SOTAs here:
 
+<img src="https://github.com/MAGIC-AI4Med/DiagRL/blob/main/assets/performOverview.png"/> 
+
 ![performOverview](D:\Joy\GithubDesktop\DiagRL\assets\performOverview.png)
+
+
+
+## Installation
+
+Updating ...
+
+
+
+## Quick Start
+
+Updating ...
 
 
 
@@ -48,3 +62,11 @@ We introduce DiagRL, focusing on clinical presentation-based diagnosis, which re
 **Patient Record Database.** We select a subset of former datasets as the multi-center patient records. We processed these data from their case report to extracted symptoms / phenotypes through GPT-4o and DeepSeek-V3. The processed database could be found at: (to upload)
 
 **Medical Retrieval Collection.** This is borrowed from [MedRAG](https://github.com/Teddy-XiongGZ/MedRAG). We sincerely appreciate their impressive work!
+
+<img src="https://github.com/MAGIC-AI4Med/DiagRL/blob/main/assets/Retrieval.png"/> 
+
+![Retrieval](D:\Joy\GithubDesktop\DiagRL\assets\Retrieval.png)
+
+
+
+## Citation & Contact
