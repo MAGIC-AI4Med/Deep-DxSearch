@@ -55,6 +55,8 @@ cd ..
 pip3 install -r requirements.txt
 ```
 
+If you can not resolve the package contradiction, please follow the debug feedback. Violations to requirements.txt may not lead to inevitable failure
+
 ### Step2 (Optional): Install retriever environments
 
 This server installation is borrowed from [Search-R1](https://github.com/PeterGriffinJin/Search-R1). While we process data from PubMed, Wiki and Textbook for retriever customization.
