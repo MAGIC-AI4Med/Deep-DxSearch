@@ -41,7 +41,7 @@ It is recommended that CUDA version >=12.1. If you encounter errors during insta
 
 Note that the following minimum installation is already sufficient for running DiagRL under basement settings.
 
-```cmd
+```bash
 # Initialize th Anaconda Environment
 conda create -n DiagRL python==3.10
 conda activate DiagRL
@@ -63,7 +63,7 @@ If you can not resolve the package contradiction, please follow the debug feedba
 
 This server installation is borrowed from [Search-R1](https://github.com/PeterGriffinJin/Search-R1). While we process data from PubMed, Wiki and Textbook for retriever customization.
 
-```cmd
+```bash
 conda create -n retriever python=3.10
 conda activate retriever
 
@@ -82,7 +82,7 @@ pip install uvicorn fastapi
 
 We use  [SGLang](https://github.com/sgl-project/sglang) to deploy a LLM summarizer to offer summarization service given a long context document from PubMed, Wikipedia, etc.
 
-```cmd
+```bash
 # Basic Installation
 conda create -n llmServer python==3.10
 conda activate llmServer
@@ -152,21 +152,30 @@ formatted_item = {
 
 ### Start Retriever (Optional)
 
-This service includes a Wikipedia retriever, a PubMed retriever and a Textbook retriever. Here we provide a end-to-end data processing script at: . Then execute:
+This service includes a Wikipedia retriever, a PubMed retriever and a Textbook retriever. Here we use pubmed as an example. The processing of wikipedia and textbooks is the same.:
 
 ```bash
-python ./your/path/to/DiagRL/prepare_knoweldge.py
+pip install huggingface-hub
+huggingface-cli download MedRAG/pubmed --repo-type dataset --local-dir ./<local-dir>
+
+# process the dataset
+python merge.py
+
+# generate indexing
+bash indexgen.sh
 ```
 
 Then we can start these three retrievers as:
 
-```cmd
+```bash
 # Start a new terminal
 conda activate retriever
 bash ./your/path/to/DiagRL/wikipedia.sh
+
 # Start a new terminal
 conda activate retriever
 bash ./your/path/to/DiagRL/pubmed.sh
+
 # Start a new terminal
 conda activate retriever
 bash ./your/path/to/DiagRL/textbook.sh
@@ -176,7 +185,7 @@ bash ./your/path/to/DiagRL/textbook.sh
 
 The LLM server is only needed when the retriever is active. Since the retrieved message may be very long, it should be summarized by a real-time summarizer. The launch code is available at ./your/path/to/DiagRL/launch_server.py, and run the following command in a new terminal:
 
-```cmd
+```bash
 # Start a new terminal
 conda activate llmServer
 bash ./your/path/to/DiagRL/launch.sh
@@ -213,7 +222,7 @@ DiagRL/
 
 > [!IMPORTANT]
 >
-> *trainDiagRL.sh* needs further fixed based on your directory for runing. Please be cautious to adjust the following parameters. Or you may encounter **out of memory**, **hang up** or **overflow (Nan during training)**: 
+> *trainDiagRL.sh* needs further modification based on your directory for runing. Please be cautious to adjust the following parameters. Or you may encounter **out of memory**, **hang up** or **overflow (Nan during training)**: 
 
 ```bash
 NGPUS
@@ -227,7 +236,7 @@ PPO_MICRO_BATCH_SIZE
 
 Then you can use the following command to implement the RL training:
 
-```cmd
+```bash
 # Start a new terminal
 conda activate DiagRL
 cd ./your/path/to/DiagRL/scripts/train
@@ -238,7 +247,7 @@ bash trainDiagRL.sh
 
 Run the perforEval.py for accuracy assessment:
 
-```cmd
+```bash
 # Start a new terminal
 conda activate DiagRL
 python ./your/path/to/DiagRL/scripts/eval/performEval.py
