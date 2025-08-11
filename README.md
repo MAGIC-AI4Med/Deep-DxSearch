@@ -37,6 +37,8 @@ It is recommended that CUDA version >=12.1. If you encounter errors during insta
 
 ### Step1: Install the backbone requirements
 
+Note that the following minimum installation is already sufficient for running DiagRL under basement settings.
+
 ```bash
 # Initialize th Anaconda Environment
 conda create -n DiagRL python==3.10
@@ -53,17 +55,51 @@ cd ..
 pip3 install -r requirements.txt
 ```
 
-### Step2 (Optional): Install retrieval server environments
+### Step2 (Optional): Install retriever environments
 
+This server installation is borrowed from [Search-R1](https://github.com/PeterGriffinJin/Search-R1). While we process data from PubMed, Wiki and Textbook for retriever customization.
 
+```bash
+conda create -n retriever python=3.10
+conda activate retriever
+
+# we recommend installing torch with conda for faiss-gpu
+conda install pytorch==2.4.0 torchvision==0.19.0 torchaudio==2.4.0 pytorch-cuda=12.1 -c pytorch -c nvidia
+pip install transformers datasets pyserini
+
+## install the gpu version faiss to guarantee efficient RL rollout
+conda install -c pytorch -c nvidia faiss-gpu=1.8.0
+
+## API function
+pip install uvicorn fastapi
+```
 
 ### Step3 (Optional): Install LLM summarizer environments
+
+We use SGLang to deploy a LLM summarizer to offer summarization service given a long context document from PubMed, Wikipedia, etc.
+
+```bash
+# Basic Installation
+conda create -n llmServer python==3.10
+conda activate llmServer
+pip3 install uv
+uv pip install "sglang[all]>=0.5.0rc0"
+```
+
+If you meet the CUDA out of memory problem, either:
+
+- check whether the KV cache is correctly cleared after each rollout.
+- check whether the memory utilization parameter is appropriately set.
 
 
 
 ## Quick Start (Updating ...)
 
+Here we  use a example trained on MIMIC-IV-Common datasets to demonstrate how to training based on Qwen2.5-7B-Instruct.
 
+
+
+### Training
 
 
 
