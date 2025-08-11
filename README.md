@@ -29,6 +29,8 @@ We introduce **DiagRL**, focusing on clinical presentation-based diagnosis, whic
 
 ## Direct Usage
 
+You can directly use our DiagRL
+
 
 
 ## Installation
