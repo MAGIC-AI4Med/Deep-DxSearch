@@ -35,7 +35,7 @@ You can directly use our DiagRL through transformers format.
 
 ## 🛠️Env Installation
 
-It is recommended that CUDA version >=12.1. If you encounter errors during installation, please adjust corresponding package version and refer to the [verl](https://verl.readthedocs.io/en/v0.2.x/start/install.html) document. Our project is currently based on verl v0.2x.
+It is recommended that CUDA version >=12.1. If you encounter errors during installation, please adjust corresponding package version and refer to the [verl](https://verl.readthedocs.io/en/v0.2.x/start/install.html) document. Our project is currently based on verl v0.2x. To avoid version contradiction, we recommend to create 3 conda environment as follows:
 
 ### Step1: Install the backbone requirements
 
