@@ -1,7 +1,6 @@
 <div align="center">
 
 
-
 # *DiagRL*: An Agentic RL Framework Orchestrating Retrieval and Reasoning for Medical Diagnosis
 
 (**Under updating ...**)
@@ -9,7 +8,8 @@
 [![Notion](https://img.shields.io/badge/blog-black?style=for-the-badge&logo=notion)]() [![Arxiv](https://img.shields.io/badge/paper-A82F27?style=for-the-badge&logo=arxiv)]() [![Model](https://img.shields.io/badge/model-4169E1?style=for-the-badge&logo=huggingface)]() 
 
 </div>
-We introduce **DiagRL**, focusing on clinical presentation-based diagnosis, which requires combinatorial analysis of symptoms, evidence-based associations between symptoms and diseases, and differential diagnosis ranking. Unlike prior inference-only agentic systems, **DiagRL jointly optimizes retrieval and reasoning in an end-to-end fashion**, enabling the development of retrieval-aware diagnostic strategies. It leverages a large language model (LLM) as the decision-making core and operates through five structured action modes—***reason***, ***lookup***, ***match***, ***search***, ***diagnose***—which support stepwise evidence acquisition and transparent clinical reasoning.
+
+We introduce **DiagRL**, focusing on clinical presentation-based diagnosis, which requires combinatorial analysis of symptoms, evidence-based associations between symptoms and diseases, and differential diagnosis ranking. Unlike prior inference-only agentic systems, DiagRL **jointly optimizes retrieval and reasoning in an end-to-end fashion**, enabling the development of retrieval-aware diagnostic strategies. It leverages a large language model (LLM) as the decision-making core and operates through five structured action modes—**reason, lookup, match, search, diagnose**—which support stepwise evidence acquisition and transparent clinical reasoning.
 
 
 
@@ -123,7 +123,7 @@ Here we setup an example using **MIMIC-IV-Common** dataset to demonstrate how to
 
 ### Preparing Data
 
-1. Here we allow parquet format as file input. Prepared data could be found at  ./your/path/to/DiagRL/data as train_data_MIMIC.parquet and val_data_MIMIC.parquet. Alternatively, you can prepare train / test data.parquet as given by the following rule:
+1. Here we allow parquet format as file input. Prepared data could be found as [train_data_MIMIC.parquet](https://github.com/MAGIC-AI4Med/DiagRL/blob/main/DiagRL/data/train_data_MIMICC.parquet) and [val_data_MIMIC.parquet](https://github.com/MAGIC-AI4Med/DiagRL/blob/main/DiagRL/data/val_data_MIMICC.parquet). Alternatively, you can prepare train / test data.parquet as given by the following rule:
 
 ```python
 formatted_item = {
@@ -148,7 +148,7 @@ formatted_item = {
 }
 ```
 
-2. Two essential components: disease information guideline and patient record database are needed for knowledge aquisition. Here we provided them at ./your/path/to/DiagRL/src/search/ and ./your/path/to/DiagRL/src/match/. You can also customize them based on your requirements.
+2. Two essential components: disease information guideline and patient record database are needed for knowledge aquisition. Here we provided them at [common_disease_phenotype.json](https://github.com/MAGIC-AI4Med/DiagRL/blob/main/DiagRL/src/search/common_disease_phenotype.json) and [match_source_MIMIC.json](https://github.com/MAGIC-AI4Med/DiagRL/blob/main/DiagRL/src/match/match_source_MIMICC.json). You can also customize them based on your requirements.
 
 ### Start Retriever (Optional)
 
@@ -170,25 +170,25 @@ Then we can start these three retrievers as:
 ```bash
 # Start a new terminal
 conda activate retriever
-bash ./your/path/to/DiagRL/wikipedia.sh
+bash ./your/path/to/DiagRL/wiki_server.sh
 
 # Start a new terminal
 conda activate retriever
-bash ./your/path/to/DiagRL/pubmed.sh
+bash ./your/path/to/DiagRL/pubmed_server.sh
 
 # Start a new terminal
 conda activate retriever
-bash ./your/path/to/DiagRL/textbook.sh
+bash ./your/path/to/DiagRL/textbook_server.sh
 ```
 
 ### Launch LLM Server (Optional)
 
-The LLM server is only needed when the retriever is active. Since the retrieved message may be very long, it should be summarized by a real-time summarizer. The launch code is available at ./your/path/to/DiagRL/launch_server.py, and run the following command in a new terminal:
+The LLM server is only needed when the retriever is active. Since the retrieved message may be very long, it should be summarized by a real-time summarizer. The launch code is available at [launch_server.py](https://github.com/MAGIC-AI4Med/DiagRL/blob/main/DiagRL/launchServer.py), and run the following command in a new terminal:
 
 ```bash
 # Start a new terminal
 conda activate llmServer
-bash ./your/path/to/DiagRL/launch.sh
+python ./your/path/to/DiagRL/launchServer.py
 ```
 
 ### Training
