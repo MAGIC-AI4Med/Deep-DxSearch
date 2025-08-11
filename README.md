@@ -31,7 +31,7 @@ We introduce **DiagRL**, focusing on clinical presentation-based diagnosis, whic
 
 
 
-## Installation (Updating ...)
+## Installation
 
 It is recommended that CUDA version >=12.1. If you encounter errors during installation, please adjust corresponding package version and refer to the [verl](https://verl.readthedocs.io/en/v0.2.x/start/install.html) document. Our project is currently based on verl v0.2x.
 
@@ -117,7 +117,7 @@ If you meet the CUDA out of memory problem, either:
 
 ## Quick Start (Updating ...)
 
-Here we  use a example trained on MIMIC-IV-Common datasets to demonstrate how to training based on Qwen2.5-7B-Instruct.
+Here we  use a example using MIMIC-IV-Common dataset to demonstrate how to train with Qwen2.5-7B-Instruct.
 
 
 
