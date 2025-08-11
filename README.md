@@ -14,7 +14,7 @@ We introduce **DiagRL**, focusing on clinical presentation-based diagnosis, whic
 ## Key Insights
 
 - We use the *LLM-based reinforcement learning* approach to enable the agent to learn ***when and how to retrieve information***, and ***how to optimize the reasoning paths*** through rule-based supervision tailored for diagnosis tasks.
-- We open-source a large-scale **disease-symptom(phenotype) guideline** from authoritative resources
+- We open-source a large-scale **disease-symptom(phenotype) guideline** based on reliable resources
 - We open-source a processed **patient record database** collected from 5 datasets.
 - We open-source our **model checkpoint** which trained on multi-center diagnosis tasks in Huggingface. We hope this can Promote the development of agentic disease diagnosis.
 - Diagnostic workflow with retrieval corpus and performance compared to SOTAs here:
@@ -25,15 +25,31 @@ We introduce **DiagRL**, focusing on clinical presentation-based diagnosis, whic
 
 
 
-## Installation
+## Installation (Updating ...)
 
-Updating ...
+It is recommended that: CUDA version >= 12.1
+
+```bash
+# Initialize th Anaconda Environment
+conda create -n DiagRL python==3.10
+conda activate DiagRL
+
+# Install Basic Verl-related Packages
+cd ./your/path/to/DiagRL/verl
+pip3 install torch==2.4.0 --index-url https://download.pytorch.org/whl/cu124
+pip3 install https://github.com/Dao-AILab/flash-attention/releases/download/v2.7.4.post1/flash_attn-2.7.4.post1+cu12torch2.4cxx11abiFALSE-cp310-cp310-linux_x86_64.whl --no-build-isolation
+pip3 install -e .
+
+# Install Customized Packages
+cd ..
+pip3 install -r requirements.txt
+```
 
 
 
-## Quick Start
+## Quick Start (Updating ...)
 
-Updating ...
+
 
 
 
