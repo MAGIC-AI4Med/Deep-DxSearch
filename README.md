@@ -13,12 +13,12 @@ We introduce **DiagRL**, focusing on clinical presentation-based diagnosis, whic
 
 
 
-## Key Insights
+## 💡Key Insights
 
-- We use the *LLM-based reinforcement learning* approach to enable the agent to learn ***when and how to retrieve information***, and ***how to optimize the reasoning paths*** through rule-based supervision tailored for diagnosis tasks.
-- We open-source a large-scale **disease-symptom(phenotype) guideline** based on reliable resources
-- We open-source a processed **patient record database** collected from 5 datasets.
-- We open-source our **model checkpoint** which trained on multi-center diagnosis tasks in Huggingface. We hope this can Promote the development of agentic disease diagnosis.
+- We use the *LLM-based reinforcement learning* approach to enable the agent to learn ***when and how to retrieve information***, and ***how to optimize the reasoning paths*** through rule-based supervision tailored for diagnosis tasks. 🤖
+- We open-source a large-scale **disease-symptom(phenotype) guideline** based on reliable resources.  🤗
+- We open-source a processed **patient record database** collected from 5 datasets. 🤗
+- We open-source our **model checkpoint** which trained on multi-center diagnosis tasks in Huggingface. We hope this can Promote the development of agentic disease diagnosis. 🤗
 - Diagnostic workflow with retrieval corpus and performance compared to SOTAs here:
 
 <img src="https://github.com/MAGIC-AI4Med/DiagRL/blob/main/assets/performOverview.png"/> 
@@ -27,13 +27,13 @@ We introduce **DiagRL**, focusing on clinical presentation-based diagnosis, whic
 
 
 
-## Direct Usage (available soon ...)
+## ⚡Direct Usage (available soon ...)
 
 You can directly use our DiagRL through transformers format.
 
 
 
-## Env Installation
+## 🛠️Env Installation
 
 It is recommended that CUDA version >=12.1. If you encounter errors during installation, please adjust corresponding package version and refer to the [verl](https://verl.readthedocs.io/en/v0.2.x/start/install.html) document. Our project is currently based on verl v0.2x.
 
@@ -117,7 +117,7 @@ If you meet the CUDA out of memory problem, either:
 
 
 
-## Quick Start (updating ...)
+## 🏃Quick Start (updating ...)
 
 Here we setup an example using **MIMIC-IV-Common** dataset to demonstrate how to train with **Qwen2.5-7B-Instruct**.
 
@@ -246,7 +246,7 @@ python ./your/path/to/DiagRL/scripts/eval/performEval.py
 
 
 
-## Data Resources
+## 🗃️Data Resources
 
 **MIMIC-IV-note.** The official data repository is https://physionet.org/content/mimiciv/3.1/ . Pay attention to the ethics statement. Here we use a subset of it and further processed into the common, rare part.
 
@@ -264,7 +264,7 @@ python ./your/path/to/DiagRL/scripts/eval/performEval.py
 
 
 
-## Retrieval Corpus
+## 🔎Retrieval Corpus
 
 **Disease-symptom(phenotype) Guidelines.** It contains 16,371 common and rare diseases with their typical phenotypes. These diseases are from former public datasets and the ICD10data. We search these diseases for their introduction from authoritative resources such as [MAYO CLINIC](https://www.mayoclinic.org/diseases-conditions), [NCBI](https://www.ncbi.nlm.nih.gov/), etc. Then we use GPT-4o to summarize the main information of these contents to structural information guideline. The processed file could be found at: (to upload).
 
@@ -278,7 +278,7 @@ python ./your/path/to/DiagRL/scripts/eval/performEval.py
 
 
 
-## Benchmark
+## 🥇Benchmark
 
 We show the main results of DiagRL and compare it to other frameworks. For more details, please refer to our paper.
 
@@ -317,7 +317,7 @@ We use GPT-4o as the large language model base for MedRAG and MAC framework, for
 
 
 
-## Acknowledgements
+## 🙏Acknowledgements
 
 We thank Shanghai Jiao Tong University, Shanghai Artificial Intelligence Laboratory, and Xinhua Hospital for their fundings, computation and data support.
 
@@ -325,7 +325,7 @@ This training Implementation is based on [verl](https://github.com/volcengine/ve
 
 
 
-## Citation & Contact
+## 📝Citation & Contact
 
 
 
