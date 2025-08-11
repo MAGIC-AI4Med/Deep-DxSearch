@@ -23,7 +23,6 @@ We introduce **DiagRL**, focusing on clinical presentation-based diagnosis, whic
 
 <img src="https://github.com/MAGIC-AI4Med/DiagRL/blob/main/assets/performOverview.png"/> 
 
-![performOverview](D:\Joy\GithubDesktop\DiagRL\assets\performOverview.png)
 
 
 
@@ -117,7 +116,7 @@ If you meet the CUDA out of memory problem, either:
 
 
 
-## 🏃Quick Start (updating ...)
+## 🏃Quick Start
 
 Here we setup an example using **MIMIC-IV-Common** dataset to demonstrate how to train with **Qwen2.5-7B-Instruct**.
 
@@ -283,7 +282,6 @@ python ./your/path/to/DiagRL/scripts/eval/performEval.py
 
 <img src="https://github.com/MAGIC-AI4Med/DiagRL/blob/main/assets/Retrieval.png"/> 
 
-![Retrieval](D:\Joy\GithubDesktop\DiagRL\assets\Retrieval.png)
 
 
 
@@ -293,7 +291,6 @@ We show the main results of DiagRL and compare it to other frameworks. For more 
 
 <img src="https://github.com/MAGIC-AI4Med/DiagRL/blob/main/assets/comparison.png"/> 
 
-![comparison](D:\Joy\GithubDesktop\DiagRL\assets\comparison.png)
 
 **Table: Main diagnosis performance.**  
 We calculate top-1 and top-5 accuracy among common and rare disease diagnosis datasets and compare our \ModelName{} with other representative models. “Env” means we allow the model to use our proposed environment as assistance. All results are shown in percentage.
