@@ -34,7 +34,7 @@ It is recommended that: CUDA version >= 12.1
 conda create -n DiagRL python==3.10
 conda activate DiagRL
 
-# Install Basic Verl-related Packages
+# Install Basic Verl-required Packages
 cd ./your/path/to/DiagRL/verl
 pip3 install torch==2.4.0 --index-url https://download.pytorch.org/whl/cu124
 pip3 install https://github.com/Dao-AILab/flash-attention/releases/download/v2.7.4.post1/flash_attn-2.7.4.post1+cu12torch2.4cxx11abiFALSE-cp310-cp310-linux_x86_64.whl --no-build-isolation
