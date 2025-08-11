@@ -73,6 +73,10 @@ Updating ...
 
 We show the main results of DiagRL and compare it to other frameworks. For more details, please refer to our paper.
 
+<img src="https://github.com/MAGIC-AI4Med/DiagRL/blob/main/assets/comparison.png"/> 
+
+![comparison](D:\Joy\GithubDesktop\DiagRL\assets\comparison.png)
+
 **Table: Main diagnosis performance.**  
 We calculate top-1 and top-5 accuracy among common and rare disease diagnosis datasets and compare our \ModelName{} with other representative models. “Env” means we allow the model to use our proposed environment as assistance. All results are shown in percentage.
 
@@ -101,6 +105,10 @@ We use GPT-4o as the large language model base for MedRAG and MAC framework, for
 | COD        | COT-Agent      | 0.81          | 7.26          | 11.35             | 21.99             | 70.64           | 90.64           | 4.19          | 19.16         | 2.99            | 11.98           | 2.41            | 8.43            |
 | MAC        | Multi-Agent    | 4.03          | 10.74         | 28.06             | 30.66             | 24.03           | 29.07           | 16.17         | 24.69         | 15.66           | 17.07           | 35.54           | 43.98           |
 | **DiagRL** | **Agentic RL** | **35.22**     | **46.83**     | **40.29**         | **47.75**         | **48.81**       | **60.04**       | **52.11**     | **64.57**     | **28.14**       | **39.22**       | **70.48**       | **82.96**       |
+
+
+
+## Acknowledgements
 
 
 
