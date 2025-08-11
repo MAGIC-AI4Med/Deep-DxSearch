@@ -1,5 +1,7 @@
 <div align="center">
 
+
+
 # *DiagRL*: Optimizing Workflow in Evidence-based Diagnosis through Reinforcement Learning (Still Updating ...)
 
 (**Under updating ...**)
@@ -25,9 +27,15 @@ We introduce **DiagRL**, focusing on clinical presentation-based diagnosis, whic
 
 
 
+## Direct Usage
+
+
+
 ## Installation (Updating ...)
 
-It is recommended that: CUDA version >= 12.1
+It is recommended that CUDA version >=12.1. If you encounter errors during installation, please adjust corresponding package version and refer to the [verl](https://verl.readthedocs.io/en/v0.2.x/start/install.html) document. Our project is currently based on verl v0.2x.
+
+### Step1: Install the backbone requirements
 
 ```bash
 # Initialize th Anaconda Environment
@@ -44,6 +52,12 @@ pip3 install -e .
 cd ..
 pip3 install -r requirements.txt
 ```
+
+### Step2 (Optional): Install retrieval server environments
+
+
+
+### Step3 (Optional): Install LLM summarizer environments
 
 
 
@@ -126,6 +140,14 @@ We use GPT-4o as the large language model base for MedRAG and MAC framework, for
 
 ## Acknowledgements
 
+We thank Shanghai Jiao Tong University, Shanghai Artificial Intelligence Laboratory, and Xinhua Hospital for their fundings, computation and data support.
+
+This training Implementation is based on [verl](https://github.com/volcengine/verl). The base LLMs are from [Qwen2.5](https://huggingface.co/collections/Qwen/qwen25-66e81a666513e518adb90d9e) series. The retrieval serving is based on [FastAPI](https://github.com/fastapi/fastapi). The LLM service is based on [SGLang](https://github.com/sgl-project/sglang).  The retrieval corpus include a part of [MedRAG](https://github.com/Teddy-XiongGZ/MedRAG) as components. We sincerely appreciate their contributions.
+
 
 
 ## Citation & Contact
+
+
+
+If you encounter any question, please raise a issue in this repository or contact three-world@sjtu.edu.cn
