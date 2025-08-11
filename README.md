@@ -2,7 +2,7 @@
 
 
 
-# *DiagRL*: Optimizing Workflow in Evidence-based Diagnosis through Reinforcement Learning (Still Updating ...)
+# *DiagRL*: An Agentic RL Framework Orchestrating Retrieval and Reasoning for Medical Diagnosis
 
 (**Under updating ...**)
 
@@ -27,13 +27,13 @@ We introduce **DiagRL**, focusing on clinical presentation-based diagnosis, whic
 
 
 
-## Direct Usage
+## Direct Usage (available soon ...)
 
-You can directly use our DiagRL
+You can directly use our DiagRL through transformers format.
 
 
 
-## Installation
+## Env Installation
 
 It is recommended that CUDA version >=12.1. If you encounter errors during installation, please adjust corresponding package version and refer to the [verl](https://verl.readthedocs.io/en/v0.2.x/start/install.html) document. Our project is currently based on verl v0.2x.
 
@@ -41,7 +41,7 @@ It is recommended that CUDA version >=12.1. If you encounter errors during insta
 
 Note that the following minimum installation is already sufficient for running DiagRL under basement settings.
 
-```bash
+```cmd
 # Initialize th Anaconda Environment
 conda create -n DiagRL python==3.10
 conda activate DiagRL
@@ -63,7 +63,7 @@ If you can not resolve the package contradiction, please follow the debug feedba
 
 This server installation is borrowed from [Search-R1](https://github.com/PeterGriffinJin/Search-R1). While we process data from PubMed, Wiki and Textbook for retriever customization.
 
-```bash
+```cmd
 conda create -n retriever python=3.10
 conda activate retriever
 
@@ -80,9 +80,9 @@ pip install uvicorn fastapi
 
 ### Step3 (Optional): Install LLM summarizer environments
 
-We use SGLang to deploy a LLM summarizer to offer summarization service given a long context document from PubMed, Wikipedia, etc.
+We use  [SGLang](https://github.com/sgl-project/sglang) to deploy a LLM summarizer to offer summarization service given a long context document from PubMed, Wikipedia, etc.
 
-```bash
+```cmd
 # Basic Installation
 conda create -n llmServer python==3.10
 conda activate llmServer
@@ -117,13 +117,132 @@ If you meet the CUDA out of memory problem, either:
 
 
 
-## Quick Start (Updating ...)
+## Quick Start (updating ...)
 
-Here we  use a example using MIMIC-IV-Common dataset to demonstrate how to train with Qwen2.5-7B-Instruct.
+Here we setup an example using **MIMIC-IV-Common** dataset to demonstrate how to train with **Qwen2.5-7B-Instruct**.
 
+### Preparing Data
 
+1. Here we allow parquet format as file input. Prepared data could be found at  ./your/path/to/DiagRL/data as train_data_MIMIC.parquet and val_data_MIMIC.parquet. Alternatively, you can prepare train / test data.parquet as given by the following rule:
+
+```python
+formatted_item = {
+    "case_id": case_id,
+    "data_source": item['Source'],   # type: str  
+    "input": item['Phenotype_Text'],      # type: str
+    "ability": "disease_diagnosis",
+    "reward_model": {
+        "style": "rule",
+        "ground_truth": item['Disease_List']   # type: List  
+    },
+    "extra_info": {
+        "phenotype_list": item['Phenotype_List'],   # type: List
+        "disease": item['Disease'],   #type: Str
+        "disease_list": item['Disease_List'],   # type: List
+        "chief_complaint": item.get('chief_complaint', ''),   # Optional
+        "history_of_present_illness": item.get('history_of_present_illness', ''),   # Optional
+        "past_medical_history": item.get('past_medical_history', ''),   # Optional
+        "line_number": item.get('line_number', ''),   # Optional
+        "source": item['Source']   #type: Str
+    }
+}
+```
+
+2. Two essential components: disease information guideline and patient record database are needed for knowledge aquisition. Here we provided them at ./your/path/to/DiagRL/src/search/ and ./your/path/to/DiagRL/src/match/. You can also customize them based on your requirements.
+
+### Start Retriever (Optional)
+
+This service includes a Wikipedia retriever, a PubMed retriever and a Textbook retriever. Here we provide a end-to-end data processing script at: . Then execute:
+
+```bash
+python ./your/path/to/DiagRL/prepare_knoweldge.py
+```
+
+Then we can start these three retrievers as:
+
+```cmd
+# Start a new terminal
+conda activate retriever
+bash ./your/path/to/DiagRL/wikipedia.sh
+# Start a new terminal
+conda activate retriever
+bash ./your/path/to/DiagRL/pubmed.sh
+# Start a new terminal
+conda activate retriever
+bash ./your/path/to/DiagRL/textbook.sh
+```
+
+### Launch LLM Server (Optional)
+
+The LLM server is only needed when the retriever is active. Since the retrieved message may be very long, it should be summarized by a real-time summarizer. The launch code is available at ./your/path/to/DiagRL/launch_server.py, and run the following command in a new terminal:
+
+```cmd
+# Start a new terminal
+conda activate llmServer
+bash ./your/path/to/DiagRL/launch.sh
+```
 
 ### Training
+
+Before training, check the whole framework directory is complete and correct like the following:
+
+```cmd
+DiagRL/
+├── data/
+│   ├── train_data_MIMICC_parquet
+│   └── val_data_MIMICC_parquet
+├── scripts/
+│   └── train/
+│       ├── checkpoints/
+│       │   └── DiagRL/
+│       │       └── DiagRLMIMIC/
+│       │           └── outputs
+│       └── ... (other files under train)
+├── outputs/
+├── trainDiagRL.sh
+├── src/
+├── match/
+│   ├── CaseMatchService.py
+│   └── match_source_MIMICC_filtered.pt
+├── search/
+│   ├── PhenotypeSearchService.py
+│   └── common_disease_phenotype.json
+├── verl/
+└── ... (other omitted items)
+```
+
+> [!IMPORTANT]
+>
+> *trainDiagRL.sh* needs further fixed based on your directory for runing. Please be cautious to adjust the following parameters. Or you may encounter **out of memory**, **hang up** or **overflow (Nan during training)**: 
+
+```bash
+NGPUS
+MODEL_PARALLEL
+TRAIN_BATCH_SIZE
+MAX_PROMPT_LENGTH
+MAX_RESPONSE_LENGTH
+PPO_MINI_BATCH_SIZE
+PPO_MICRO_BATCH_SIZE
+```
+
+Then you can use the following command to implement the RL training:
+
+```cmd
+# Start a new terminal
+conda activate DiagRL
+cd ./your/path/to/DiagRL/scripts/train
+bash trainDiagRL.sh
+```
+
+### Evaluation
+
+Run the perforEval.py for accuracy assessment:
+
+```cmd
+# Start a new terminal
+conda activate DiagRL
+python ./your/path/to/DiagRL/scripts/eval/performEval.py
+```
 
 
 
