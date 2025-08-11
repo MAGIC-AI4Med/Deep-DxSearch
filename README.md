@@ -150,4 +150,4 @@ This training Implementation is based on [verl](https://github.com/volcengine/ve
 
 
 
-If you encounter any question, please raise a issue in this repository or contact three-world@sjtu.edu.cn
+If you encounter any question, please raise a issue in this repository or directly contact three-world@sjtu.edu.cn
