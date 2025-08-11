@@ -1,19 +1,19 @@
 <div align="center">
 
-# *DiagRL*: Optimizing Workflow in Evidence-based Diagnosis through Reinforcement Learning
+# *DiagRL*: Optimizing Workflow in Evidence-based Diagnosis through Reinforcement Learning (Still Updating ...)
 
 (**Under updating ...**)
 
 [![Notion](https://img.shields.io/badge/blog-black?style=for-the-badge&logo=notion)]() [![Arxiv](https://img.shields.io/badge/paper-A82F27?style=for-the-badge&logo=arxiv)]() [![Model](https://img.shields.io/badge/model-4169E1?style=for-the-badge&logo=huggingface)]() 
 
 </div>
-We introduce DiagRL, focusing on clinical presentation-based diagnosis, which requires combinatorial analysis of symptoms, evidence-based associations between symptoms and diseases, and differential diagnosis ranking. Unlike prior inference-only agentic systems, DiagRL jointly optimizes retrieval and reasoning in an end-to-end fashion, enabling the development of retrieval-aware diagnostic strategies. It leverages a large language model (LLM) as the decision-making core and operates through five structured action modes—\<reason>, \<lookup>, \<match>, \<search>, \<diagnose>—which support stepwise evidence acquisition and transparent clinical reasoning.
+We introduce **DiagRL**, focusing on clinical presentation-based diagnosis, which requires combinatorial analysis of symptoms, evidence-based associations between symptoms and diseases, and differential diagnosis ranking. Unlike prior inference-only agentic systems, **DiagRL jointly optimizes retrieval and reasoning in an end-to-end fashion**, enabling the development of retrieval-aware diagnostic strategies. It leverages a large language model (LLM) as the decision-making core and operates through five structured action modes—***reason***, ***lookup***, ***match***, ***search***, ***diagnose***—which support stepwise evidence acquisition and transparent clinical reasoning.
 
 
 
 ## Key Insights
 
-- We use the *LLM-based reinforcement learning* approach to enable the agent to learn *when and how to retrieve information*, and *how to optimize the reasoning paths* through rule-based supervision tailored for diagnosis tasks.
+- We use the *LLM-based reinforcement learning* approach to enable the agent to learn ***when and how to retrieve information***, and ***how to optimize the reasoning paths*** through rule-based supervision tailored for diagnosis tasks.
 - We open-source a large-scale **disease-symptom(phenotype) guideline** from authoritative resources
 - We open-source a processed **patient record database** collected from 5 datasets.
 - We open-source our **model checkpoint** which trained on multi-center diagnosis tasks in Huggingface. We hope this can Promote the development of agentic disease diagnosis.
@@ -66,6 +66,41 @@ Updating ...
 <img src="https://github.com/MAGIC-AI4Med/DiagRL/blob/main/assets/Retrieval.png"/> 
 
 ![Retrieval](D:\Joy\GithubDesktop\DiagRL\assets\Retrieval.png)
+
+
+
+## Benchmark
+
+We show the main results of DiagRL and compare it to other frameworks. For more details, please refer to our paper.
+
+**Table: Main diagnosis performance.**  
+We calculate top-1 and top-5 accuracy among common and rare disease diagnosis datasets and compare our \ModelName{} with other representative models. “Env” means we allow the model to use our proposed environment as assistance. All results are shown in percentage.
+
+| Model              | MIMIC-C Acc@1 | MIMIC-C Acc@5 | PMC-Patient Acc@1 | PMC-Patient Acc@5 | MedDialog Acc@1 | MedDialog Acc@5 | MIMIC-R Acc@1 | MIMIC-R Acc@5 | RareArena Acc@1 | RareArena Acc@5 | RareBench Acc@1 | RareBench Acc@5 |
+| ------------------ | ------------- | ------------- | ----------------- | ----------------- | --------------- | --------------- | ------------- | ------------- | --------------- | --------------- | --------------- | --------------- |
+| Qwen-2.5-14B       | 8.80          | 12.40         | 17.73             | 27.66             | 17.87           | 32.34           | 7.93          | 16.71         | 6.53            | 13.23           | 18.07           | 31.38           |
+| Baichuan-M1        | 11.8          | 14.48         | 26.95             | 39.84             | 26.81           | 38.85           | 8.35          | 19.25         | 10.69           | 21.63           | 26.93           | 44.79           |
+| DeepSeek-R1        | 5.65          | 15.32         | 29.62             | 41.52             | 28.34           | 40.96           | 12.05         | 23.90         | 10.98           | 22.56           | 28.22           | 50.83           |
+| GPT-4o             | 6.43          | 9.82          | 23.51             | 36.10             | 22.59           | 36.01           | 7.65          | 15.58         | 12.83           | 23.10           | 24.25           | 43.54           |
+| Qwen14B (Env)      | 13.22         | 15.91         | 24.38             | 35.57             | 24.69           | 36.22           | 16.54         | 24.33         | 10.08           | 15.47           | 34.70           | 59.20           |
+| GPT-4o (Env)       | 15.07         | 21.25         | 28.64             | 38.38             | 25.86           | 39.41           | 20.47         | 29.05         | 11.24           | 19.32           | 40.11           | 63.28           |
+| **Ours (Llama8B)** | 21.05         | 27.83         | 34.15             | 45.74             | 35.51           | 46.92           | 42.00         | 55.02         | 22.41           | 29.95           | 64.33           | 73.86           |
+| **Ours (Qwen7B)**  | 33.09         | 42.87         | **41.41**         | 46.80             | **49.28**       | 55.34           | **52.44**     | 61.53         | 25.97           | 35.32           | 64.47           | 79.51           |
+| **Ours (Qwen14B)** | **35.22**     | **46.83**     | 40.29             | **47.75**         | 48.81           | **60.04**       | 52.11         | **64.57**     | **28.14**       | **39.22**       | **70.48**       | **82.96**       |
+
+
+
+**Table: Diagnosis performance compared to other frameworks.**  
+We use GPT-4o as the large language model base for MedRAG and MAC framework, for other frameworks, we just follow their official settings during benchmarking. All results are shown in percentage.
+
+| Framework  | Category       | MIMIC-C Acc@1 | MIMIC-C Acc@5 | PMC-Patient Acc@1 | PMC-Patient Acc@5 | MedDialog Acc@1 | MedDialog Acc@5 | MIMIC-R Acc@1 | MIMIC-R Acc@5 | RareArena Acc@1 | RareArena Acc@5 | RareBench Acc@1 | RareBench Acc@5 |
+| ---------- | -------------- | ------------- | ------------- | ----------------- | ----------------- | --------------- | --------------- | ------------- | ------------- | --------------- | --------------- | --------------- | --------------- |
+| MedCPT     | CLIP-based     | 0.00          | 0.81          | 7.80              | 17.73             | 6.81            | 17.45           | 4.79          | 8.38          | 1.80            | 2.99            | 4.82            | 11.45           |
+| MedGemma   | Foundation     | 18.60         | 29.00         | 26.95             | 39.01             | 20.43           | 32.77           | 12.57         | 21.56         | 10.78           | 19.76           | 28.92           | 54.82           |
+| MedRAG     | RAG-based      | 4.03          | 10.48         | 25.53             | 37.58             | 22.13           | 34.04           | 8.98          | 21.56         | 16.77           | 21.68           | 33.73           | 53.03           |
+| COD        | COT-Agent      | 0.81          | 7.26          | 11.35             | 21.99             | 70.64           | 90.64           | 4.19          | 19.16         | 2.99            | 11.98           | 2.41            | 8.43            |
+| MAC        | Multi-Agent    | 4.03          | 10.74         | 28.06             | 30.66             | 24.03           | 29.07           | 16.17         | 24.69         | 15.66           | 17.07           | 35.54           | 43.98           |
+| **DiagRL** | **Agentic RL** | **35.22**     | **46.83**     | **40.29**         | **47.75**         | **48.81**       | **60.04**       | **52.11**     | **64.57**     | **28.14**       | **39.22**       | **70.48**       | **82.96**       |
 
 
 
