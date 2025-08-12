@@ -365,6 +365,6 @@ This training Implementation is based on [verl](https://github.com/volcengine/ve
 
 ## 📝Citation & Contact
 
-
+Our paper is comming soon ...
 
 If you encounter any question, please raise a issue in this repository or directly contact three-world@sjtu.edu.cn
