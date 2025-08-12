@@ -30,8 +30,6 @@ We introduce **DiagRL**, focusing on clinical presentation-based diagnosis, whic
 
 You can use DiagRL through transformers format. The model can be loaded and directly inferenced as a general-purpose medical LLM as:
 
-# Basic Usage
-
 ```python
 from transformers import AutoModelForCausalLM, AutoTokenizer
 model_name = "QiaoyuZheng/DiagRL-7B"
