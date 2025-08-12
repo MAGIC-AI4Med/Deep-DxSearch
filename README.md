@@ -1,7 +1,7 @@
 <div align="center">
 
 
-# *DiagRL*: An Agentic RL Framework Orchestrating Retrieval and Reasoning for Medical Diagnosis
+# *DiagRL*: A Trainable Agentic RAG Framework for Traceable Diagnostic Reasoning
 
 (**Under updating ...**)
 
