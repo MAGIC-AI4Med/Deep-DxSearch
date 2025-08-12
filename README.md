@@ -6,7 +6,7 @@
 
 (**Under updating ...**)
 
-[![Notion](https://img.shields.io/badge/blog-black?style=for-the-badge&logo=notion)]() [![Arxiv](https://img.shields.io/badge/paper-A82F27?style=for-the-badge&logo=arxiv)]() [![Model](https://img.shields.io/badge/model-4169E1?style=for-the-badge&logo=huggingface)](https://huggingface.co/QiaoyuZheng/DiagRL-7B/tree/main) 
+[![Notion](https://img.shields.io/badge/blog-black?style=for-the-badge&logo=notion)]() [![Arxiv](https://img.shields.io/badge/paper-A82F27?style=for-the-badge&logo=arxiv)]() [![Model](https://img.shields.io/badge/model-4169E1?style=for-the-badge&logo=huggingface)](https://huggingface.co/QiaoyuZheng/DiagRL-7B) [![Model](https://img.shields.io/badge/model-4169E1?style=for-the-badge&logo=huggingface)](https://huggingface.co/datasets/QiaoyuZheng/DiagRL-Corpus) 
 
 </div>
 
@@ -17,8 +17,8 @@ We introduce **DiagRL**, focusing on clinical presentation-based diagnosis, whic
 ## 💡Key Insights
 
 - We use the *LLM-based reinforcement learning* approach to enable the agent to learn ***when and how to retrieve information***, and ***how to optimize the reasoning paths*** through rule-based supervision tailored for diagnosis tasks. 🤖
-- We open-source a large-scale **disease-symptom(phenotype) guideline** based on reliable resources.  🤗
-- We open-source a processed **patient record database** collected from 5 datasets. 🤗
+- We open-source a large-scale [**disease-symptom(phenotype) guideline**](https://huggingface.co/datasets/QiaoyuZheng/DiagRL-Corpus/tree/main) based on reliable resources.  🤗
+- We open-source a processed [**patient record database**](https://huggingface.co/datasets/QiaoyuZheng/DiagRL-Corpus/tree/main) collected from 5 datasets. 🤗
 - We open-source our [**model checkpoint**](https://huggingface.co/QiaoyuZheng/DiagRL-7B) which trained on multi-center diagnosis tasks in Huggingface. We hope this can Promote the development of agentic disease diagnosis. 🤗
 - Diagnostic workflow with retrieval corpus and performance compared to SOTAs here:
 
