@@ -28,7 +28,40 @@ We introduce **DiagRL**, focusing on clinical presentation-based diagnosis, whic
 
 ## ⚡Direct Usage (available soon ...)
 
-You can directly use our DiagRL through transformers format.
+You can use DiagRL through transformers format. The model can be loaded and directly inferenced as a general-purpose medical LLM as:
+
+# Basic Usage
+
+```python
+from transformers import AutoModelForCausalLM, AutoTokenizer
+model_name = "QiaoyuZheng/DiagRL-7B"
+model = AutoModelForCausalLM.from_pretrained(
+    model_name,
+    torch_dtype="auto",
+    device_map="auto"
+)
+tokenizer = AutoTokenizer.from_pretrained(model_name)
+prompt = "A patient suffers from fever, pain, feeling very tired, paleness in face, frequent infections, easy infections and bruising, bleeding with no clear cause, such as in the nose or gums and shortness of breath."
+messages = [
+    {"role": "system", "content": "You are DiagRL, created by SJTU. You are a helpful agent on diagnosis."},
+    {"role": "user", "content": prompt}
+]
+text = tokenizer.apply_chat_template(
+    messages,
+    tokenize=False,
+    add_generation_prompt=True
+)
+model_inputs = tokenizer([text], return_tensors="pt").to(model.device)
+generated_ids = model.generate(
+    **model_inputs,
+    max_new_tokens=512
+)
+generated_ids = [
+    output_ids[len(input_ids):] for input_ids, output_ids in zip(model_inputs.input_ids, generated_ids)
+]
+response = tokenizer.batch_decode(generated_ids, skip_special_tokens=True)[0]
+print(response)
+```
 
 
 
