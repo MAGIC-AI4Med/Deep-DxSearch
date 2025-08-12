@@ -147,7 +147,7 @@ If you meet the CUDA out of memory problem, either:
 
 
 
-## 🏃Quick Start
+## 🏃Quick Reproduction
 
 Here we setup an example using **MIMIC-IV-Common** dataset to demonstrate how to train with **Qwen2.5-7B-Instruct**.
 
