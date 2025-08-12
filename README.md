@@ -26,7 +26,7 @@ We introduce **DiagRL**, focusing on clinical presentation-based diagnosis, whic
 
 
 
-## ⚡Direct Usage (available soon ...)
+## ⚡Direct Usage
 
 You can use DiagRL through transformers format. The model can be loaded and directly inferenced as a general-purpose medical LLM as:
 
