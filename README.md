@@ -2,7 +2,7 @@
 
 <img src="https://github.com/MAGIC-AI4Med/DiagRL/blob/main/assets/Logo.png" alt="DiagRL Logo" width="100">
 
-# *DiagRL*: A Trainable Agentic Framework Orchestrating Retrieval and Reasoning in Diagnostic Decision-making
+# *DiagRL*: A Trainable Agentic Framework for Traceable Diagnosis via Retrieval and Reasoning Co-optimization
 
 (**Under updating ...**)
 
