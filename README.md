@@ -4,7 +4,6 @@
 
 # *DiagRL*: A Trainable Agentic Framework for Traceable Diagnosis via Retrieval and Reasoning Co-optimization
 
-(**Under updating ...**)
 
 [![Notion](https://img.shields.io/badge/blog-black?style=for-the-badge&logo=github)]() [![Arxiv](https://img.shields.io/badge/paper-A82F27?style=for-the-badge&logo=arxiv)]() [![Model](https://img.shields.io/badge/model-4169E1?style=for-the-badge&logo=huggingface)](https://huggingface.co/QiaoyuZheng/DiagRL-7B) [![Data](https://img.shields.io/badge/data-808080?style=for-the-badge&logo=huggingface)](https://huggingface.co/datasets/QiaoyuZheng/DiagRL-Corpus) 
 
