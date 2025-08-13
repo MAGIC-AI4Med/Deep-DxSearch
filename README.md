@@ -181,7 +181,7 @@ formatted_item = {
 
 2. Two essential components: disease information guideline and patient record database are needed for knowledge aquisition. Here we provided them at [common_disease_phenotype.json](https://github.com/MAGIC-AI4Med/DiagRL/blob/main/DiagRL/src/search/common_disease_phenotype.json) and [match_source_MIMIC.json](https://github.com/MAGIC-AI4Med/DiagRL/blob/main/DiagRL/src/match/match_source_MIMICC.json). You can also customize them based on your requirements.
 
-### Start Retriever (Optional)
+### Start Retrieval Service (Optional)
 
 This service includes a Wikipedia retriever, a PubMed retriever and a Textbook retriever. Here we use pubmed as an example. The processing of wikipedia and textbooks is the same.:
 
