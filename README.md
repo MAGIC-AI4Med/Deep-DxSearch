@@ -154,7 +154,7 @@ Here we setup an example using **MIMIC-IV-Common** dataset to demonstrate how to
 
 ### Preparing Data
 
-1. Here we allow parquet format as file input. Prepared data could be found as [train_data_MIMIC.parquet](https://github.com/MAGIC-AI4Med/Deep-DxSearch/blob/main/Deep-DxSearch/data/train_data_MIMICC.parquet) and [val_data_MIMIC.parquet](https://github.com/MAGIC-AI4Med/Deep-DxSearch/blob/main/Deep-DxSearch/data/val_data_MIMICC.parquet). Alternatively, you can prepare train / test data.parquet as given by the following rule:
+1. Here we allow parquet format as file input. Prepared data could be found as [train_data_MIMIC.parquet](https://github.com/MAGIC-AI4Med/Deep-DxSearch/blob/main/DiagRL/data/train_data_MIMICC.parquet) and [val_data_MIMIC.parquet](https://github.com/MAGIC-AI4Med/Deep-DxSearch/blob/main/DiagRL/data/val_data_MIMICC.parquet). Alternatively, you can prepare train / test data.parquet as given by the following rule:
 
 ```python
 formatted_item = {
@@ -179,7 +179,7 @@ formatted_item = {
 }
 ```
 
-2. Two essential components: disease information guideline and patient record database are needed for knowledge aquisition. Here we provided them at [common_disease_phenotype.json](https://github.com/MAGIC-AI4Med/Deep-DxSearch/blob/main/Deep-DxSearch/src/search/common_disease_phenotype.json) and [match_source_MIMIC.json](https://github.com/MAGIC-AI4Med/Deep-DxSearch/blob/main/Deep-DxSearch/src/match/match_source_MIMICC.json). You can also customize them based on your requirements.
+2. Two essential components: disease information guideline and patient record database are needed for knowledge aquisition. Here we provided them at [common_disease_phenotype.json](https://github.com/MAGIC-AI4Med/Deep-DxSearch/blob/main/DiagRL/src/search/common_disease_phenotype.json) and [match_source_MIMIC.json](https://github.com/MAGIC-AI4Med/Deep-DxSearch/blob/main/DiagRL/src/match/match_source_MIMICC.json). You can also customize them based on your requirements.
 
 ### Start Retrieval Service (Optional)
 
@@ -201,25 +201,25 @@ Then we can start these three retrievers as:
 ```bash
 # Start a new terminal
 conda activate retriever
-bash ./your/path/to/Deep-DxSearch/wiki_server.sh
+bash ./your/path/to/DiagRL/wiki_server.sh
 
 # Start a new terminal
 conda activate retriever
-bash ./your/path/to/Deep-DxSearch/pubmed_server.sh
+bash ./your/path/to/DiagRL/pubmed_server.sh
 
 # Start a new terminal
 conda activate retriever
-bash ./your/path/to/Deep-DxSearch/textbook_server.sh
+bash ./your/path/to/DiagRL/textbook_server.sh
 ```
 
 ### Launch LLM Server (Optional)
 
-The LLM server is only needed when the retriever is active. Since the retrieved message may be very long, it should be summarized by a real-time summarizer. The launch code is available at [launch_server.py](https://github.com/MAGIC-AI4Med/Deep-DxSearch/blob/main/Deep-DxSearch/launchServer.py), and run the following command in a new terminal:
+The LLM server is only needed when the retriever is active. Since the retrieved message may be very long, it should be summarized by a real-time summarizer. The launch code is available at [launch_server.py](https://github.com/MAGIC-AI4Med/Deep-DxSearch/blob/main/DiagRL/launchServer.py), and run the following command in a new terminal:
 
 ```bash
 # Start a new terminal
 conda activate llmServer
-python ./your/path/to/Deep-DxSearch/launchServer.py
+python ./your/path/to/DiagRL/launchServer.py
 ```
 
 ### Training
@@ -227,19 +227,19 @@ python ./your/path/to/Deep-DxSearch/launchServer.py
 Before training, check the whole framework directory is complete and correct like the following:
 
 ```cmd
-Deep-DxSearch/
+DiagRL/
 ├── data/
 │   ├── train_data_MIMICC_parquet
 │   └── val_data_MIMICC_parquet
 ├── scripts/
 │   └── train/
 │       ├── checkpoints/
-│       │   └── Deep-DxSearch/
-│       │       └── Deep-DxSearchMIMIC/
+│       │   └── DiagRL/
+│       │       └── DiagRLMIMIC/
 │       │           └── outputs
 │       └── ... (other files under train)
 ├── outputs/
-├── trainDeep-DxSearch.sh
+├── trainDiagRL.sh
 ├── src/
 ├── match/
 │   ├── CaseMatchService.py
@@ -253,7 +253,7 @@ Deep-DxSearch/
 
 > [!IMPORTANT]
 >
-> *trainDeep-DxSearch.sh* needs further modification based on your directory for runing. Please be cautious to adjust the following parameters. Or you may encounter **out of memory**, **hang up** or **overflow (Nan during training)**: 
+> *trainDiagRL.sh* needs further modification based on your directory for runing. Please be cautious to adjust the following parameters. Or you may encounter **out of memory**, **hang up** or **overflow (Nan during training)**: 
 
 ```bash
 NGPUS
@@ -269,9 +269,9 @@ Then you can use the following command to implement the RL training:
 
 ```bash
 # Start a new terminal
-conda activate Deep-DxSearch
-cd ./your/path/to/Deep-DxSearch/scripts/train
-bash trainDeep-DxSearch.sh
+conda activate DiagRL
+cd ./your/path/to/DiagRL/scripts/train
+bash trainDiagRL.sh
 ```
 
 ### Evaluation
@@ -280,8 +280,8 @@ Run the perforEval.py for accuracy assessment:
 
 ```bash
 # Start a new terminal
-conda activate Deep-DxSearch
-python ./your/path/to/Deep-DxSearch/scripts/eval/performEval.py
+conda activate DiagRL
+python ./your/path/to/DiagRL/scripts/eval/performEval.py
 ```
 
 
