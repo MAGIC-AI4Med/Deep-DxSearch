@@ -2,7 +2,7 @@
 
 <img src="https://github.com/MAGIC-AI4Med/DiagRL/blob/main/assets/Logo.png" alt="DiagRL Logo" width="100">
 
-# *DiagRL*: A Trainable Agentic RAG Framework for Traceable Diagnosis 
+# *Deep-DxSearch*: End-to-End Agentic RAG System Training for Traceable Diagnostic Reasoning
 
 
 
