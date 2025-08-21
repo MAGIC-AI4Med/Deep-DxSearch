@@ -1,39 +1,39 @@
 <div align="center">
 
-<img src="https://github.com/MAGIC-AI4Med/DiagRL/blob/main/assets/Logo.png" alt="DiagRL Logo" width="100">
+<img src="https://github.com/MAGIC-AI4Med/Deep-DxSearch/blob/main/assets/Logo.png" alt="Deep-DxSearch Logo" width="100">
 
 # *Deep-DxSearch*: End-to-End Agentic RAG System Training for Traceable Diagnostic Reasoning
 
 
 
-[![Notion](https://img.shields.io/badge/blog-black?style=for-the-badge&logo=github)]() [![Arxiv](https://img.shields.io/badge/paper-A82F27?style=for-the-badge&logo=arxiv)]() [![Model](https://img.shields.io/badge/model-4169E1?style=for-the-badge&logo=huggingface)](https://huggingface.co/QiaoyuZheng/DiagRL-7B) [![Data](https://img.shields.io/badge/data-808080?style=for-the-badge&logo=huggingface)](https://huggingface.co/datasets/QiaoyuZheng/DiagRL-Corpus) 
+[![Notion](https://img.shields.io/badge/blog-black?style=for-the-badge&logo=github)]() [![Arxiv](https://img.shields.io/badge/paper-A82F27?style=for-the-badge&logo=arxiv)]() [![Model](https://img.shields.io/badge/model-4169E1?style=for-the-badge&logo=huggingface)](https://huggingface.co/QiaoyuZheng/Deep-DxSearch-7B) [![Data](https://img.shields.io/badge/data-808080?style=for-the-badge&logo=huggingface)](https://huggingface.co/datasets/QiaoyuZheng/Deep-DxSearch-Corpus) 
 
 </div>
 
-We introduce **DiagRL**, focusing on clinical presentation-based diagnosis, which requires combinatorial analysis of symptoms, evidence-based associations between symptoms and diseases, and differential diagnosis ranking. Unlike prior inference-only agentic systems, DiagRL **jointly optimizes retrieval and reasoning in an end-to-end fashion**, enabling the development of retrieval-aware diagnostic strategies. It leverages a large language model (LLM) as the decision-making core and operates through five structured action modes—**reason, lookup, match, search, diagnose**—which support stepwise evidence acquisition and transparent clinical reasoning.
+We introduce **Deep-DxSearch**, focusing on clinical presentation-based diagnosis, which requires combinatorial analysis of symptoms, evidence-based associations between symptoms and diseases, and differential diagnosis ranking. Unlike prior inference-only agentic systems, Deep-DxSearch **jointly optimizes retrieval and reasoning in an end-to-end fashion**, enabling the development of retrieval-aware diagnostic strategies. It leverages a large language model (LLM) as the decision-making core and operates through five structured action modes—**reason, lookup, match, search, diagnose**—which support stepwise evidence acquisition and transparent clinical reasoning.
 
-Thus, **DiagRL** distinguishs former works on the real control of medical retrieval and reasoning, instead of passively prompted by them. Our paper is comming soon...
+Thus, **Deep-DxSearch** distinguishs former works on the real control of medical retrieval and reasoning, instead of passively prompted by them. Our paper is comming soon...
 
 ## 💡Key Insights
 
 - We use the *LLM-based reinforcement learning* approach to enable the agent to learn ***when and how to retrieve information***, and ***how to optimize the reasoning paths*** through rule-based supervision tailored for diagnosis tasks. 🤖
-- We open-source a large-scale [**disease-symptom(phenotype) guideline**](https://huggingface.co/datasets/QiaoyuZheng/DiagRL-Corpus/tree/main) based on reliable resources.  🤗
-- We open-source a processed [**patient record database**](https://huggingface.co/datasets/QiaoyuZheng/DiagRL-Corpus/tree/main) collected from 5 datasets. 🤗
-- We open-source our [**model checkpoint**](https://huggingface.co/QiaoyuZheng/DiagRL-7B) which trained on multi-center diagnosis tasks in Huggingface. We hope this can Promote the development of agentic disease diagnosis. 🤗
+- We open-source a large-scale [**disease-symptom(phenotype) guideline**](https://huggingface.co/datasets/QiaoyuZheng/Deep-DxSearch-Corpus/tree/main) based on reliable resources.  🤗
+- We open-source a processed [**patient record database**](https://huggingface.co/datasets/QiaoyuZheng/Deep-DxSearch-Corpus/tree/main) collected from 5 datasets. 🤗
+- We open-source our [**model checkpoint**](https://huggingface.co/QiaoyuZheng/Deep-DxSearch-7B) which trained on multi-center diagnosis tasks in Huggingface. We hope this can Promote the development of agentic disease diagnosis. 🤗
 - Diagnostic workflow with retrieval corpus and performance compared to SOTAs here:
 
-<img src="https://github.com/MAGIC-AI4Med/DiagRL/blob/main/assets/performOverview.png"/> 
+<img src="https://github.com/MAGIC-AI4Med/Deep-DxSearch/blob/main/assets/performOverview.png"/> 
 
 
 
 
 ## ⚡Direct Usage
 
-You can use DiagRL through transformers format. The model can be loaded and directly inferenced as a general-purpose medical LLM as:
+You can use Deep-DxSearch through transformers format. The model can be loaded and directly inferenced as a general-purpose medical LLM as:
 
 ```python
 from transformers import AutoModelForCausalLM, AutoTokenizer
-model_name = "QiaoyuZheng/DiagRL-7B"
+model_name = "QiaoyuZheng/Deep-DxSearch-7B"
 model = AutoModelForCausalLM.from_pretrained(
     model_name,
     torch_dtype="auto",
@@ -42,7 +42,7 @@ model = AutoModelForCausalLM.from_pretrained(
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 prompt = "A patient suffers from fever, pain, feeling very tired, paleness in face, frequent infections, easy infections and bruising, bleeding with no clear cause, such as in the nose or gums and shortness of breath."
 messages = [
-    {"role": "system", "content": "You are DiagRL, created by SJTU. You are a helpful agent on diagnosis."},
+    {"role": "system", "content": "You are Deep-DxSearch, created by SJTU. You are a helpful agent on diagnosis."},
     {"role": "user", "content": prompt}
 ]
 text = tokenizer.apply_chat_template(
@@ -70,15 +70,15 @@ It is recommended that CUDA version >=12.1. If you encounter errors during insta
 
 ### Step1: Install the backbone requirements
 
-Note that the following minimum installation is already sufficient for running DiagRL under basement settings.
+Note that the following minimum installation is already sufficient for running Deep-DxSearch under basement settings.
 
 ```bash
 # Initialize th Anaconda Environment
-conda create -n DiagRL python==3.10
-conda activate DiagRL
+conda create -n Deep-DxSearch python==3.10
+conda activate Deep-DxSearch
 
 # Install Basic Verl-required Packages
-cd ./your/path/to/DiagRL/verl
+cd ./your/path/to/Deep-DxSearch/verl
 pip3 install torch==2.4.0 --index-url https://download.pytorch.org/whl/cu124
 pip3 install https://github.com/Dao-AILab/flash-attention/releases/download/v2.7.4.post1/flash_attn-2.7.4.post1+cu12torch2.4cxx11abiFALSE-cp310-cp310-linux_x86_64.whl --no-build-isolation
 pip3 install -e .
@@ -121,7 +121,7 @@ pip3 install uv
 uv pip install "sglang[all]>=0.5.0rc0"
 ```
 
-A quick test can be conducted during the training of DiagRL:
+A quick test can be conducted during the training of Deep-DxSearch:
 
 ```python
 # A quick test
@@ -154,7 +154,7 @@ Here we setup an example using **MIMIC-IV-Common** dataset to demonstrate how to
 
 ### Preparing Data
 
-1. Here we allow parquet format as file input. Prepared data could be found as [train_data_MIMIC.parquet](https://github.com/MAGIC-AI4Med/DiagRL/blob/main/DiagRL/data/train_data_MIMICC.parquet) and [val_data_MIMIC.parquet](https://github.com/MAGIC-AI4Med/DiagRL/blob/main/DiagRL/data/val_data_MIMICC.parquet). Alternatively, you can prepare train / test data.parquet as given by the following rule:
+1. Here we allow parquet format as file input. Prepared data could be found as [train_data_MIMIC.parquet](https://github.com/MAGIC-AI4Med/Deep-DxSearch/blob/main/Deep-DxSearch/data/train_data_MIMICC.parquet) and [val_data_MIMIC.parquet](https://github.com/MAGIC-AI4Med/Deep-DxSearch/blob/main/Deep-DxSearch/data/val_data_MIMICC.parquet). Alternatively, you can prepare train / test data.parquet as given by the following rule:
 
 ```python
 formatted_item = {
@@ -179,7 +179,7 @@ formatted_item = {
 }
 ```
 
-2. Two essential components: disease information guideline and patient record database are needed for knowledge aquisition. Here we provided them at [common_disease_phenotype.json](https://github.com/MAGIC-AI4Med/DiagRL/blob/main/DiagRL/src/search/common_disease_phenotype.json) and [match_source_MIMIC.json](https://github.com/MAGIC-AI4Med/DiagRL/blob/main/DiagRL/src/match/match_source_MIMICC.json). You can also customize them based on your requirements.
+2. Two essential components: disease information guideline and patient record database are needed for knowledge aquisition. Here we provided them at [common_disease_phenotype.json](https://github.com/MAGIC-AI4Med/Deep-DxSearch/blob/main/Deep-DxSearch/src/search/common_disease_phenotype.json) and [match_source_MIMIC.json](https://github.com/MAGIC-AI4Med/Deep-DxSearch/blob/main/Deep-DxSearch/src/match/match_source_MIMICC.json). You can also customize them based on your requirements.
 
 ### Start Retrieval Service (Optional)
 
@@ -201,25 +201,25 @@ Then we can start these three retrievers as:
 ```bash
 # Start a new terminal
 conda activate retriever
-bash ./your/path/to/DiagRL/wiki_server.sh
+bash ./your/path/to/Deep-DxSearch/wiki_server.sh
 
 # Start a new terminal
 conda activate retriever
-bash ./your/path/to/DiagRL/pubmed_server.sh
+bash ./your/path/to/Deep-DxSearch/pubmed_server.sh
 
 # Start a new terminal
 conda activate retriever
-bash ./your/path/to/DiagRL/textbook_server.sh
+bash ./your/path/to/Deep-DxSearch/textbook_server.sh
 ```
 
 ### Launch LLM Server (Optional)
 
-The LLM server is only needed when the retriever is active. Since the retrieved message may be very long, it should be summarized by a real-time summarizer. The launch code is available at [launch_server.py](https://github.com/MAGIC-AI4Med/DiagRL/blob/main/DiagRL/launchServer.py), and run the following command in a new terminal:
+The LLM server is only needed when the retriever is active. Since the retrieved message may be very long, it should be summarized by a real-time summarizer. The launch code is available at [launch_server.py](https://github.com/MAGIC-AI4Med/Deep-DxSearch/blob/main/Deep-DxSearch/launchServer.py), and run the following command in a new terminal:
 
 ```bash
 # Start a new terminal
 conda activate llmServer
-python ./your/path/to/DiagRL/launchServer.py
+python ./your/path/to/Deep-DxSearch/launchServer.py
 ```
 
 ### Training
@@ -227,19 +227,19 @@ python ./your/path/to/DiagRL/launchServer.py
 Before training, check the whole framework directory is complete and correct like the following:
 
 ```cmd
-DiagRL/
+Deep-DxSearch/
 ├── data/
 │   ├── train_data_MIMICC_parquet
 │   └── val_data_MIMICC_parquet
 ├── scripts/
 │   └── train/
 │       ├── checkpoints/
-│       │   └── DiagRL/
-│       │       └── DiagRLMIMIC/
+│       │   └── Deep-DxSearch/
+│       │       └── Deep-DxSearchMIMIC/
 │       │           └── outputs
 │       └── ... (other files under train)
 ├── outputs/
-├── trainDiagRL.sh
+├── trainDeep-DxSearch.sh
 ├── src/
 ├── match/
 │   ├── CaseMatchService.py
@@ -253,7 +253,7 @@ DiagRL/
 
 > [!IMPORTANT]
 >
-> *trainDiagRL.sh* needs further modification based on your directory for runing. Please be cautious to adjust the following parameters. Or you may encounter **out of memory**, **hang up** or **overflow (Nan during training)**: 
+> *trainDeep-DxSearch.sh* needs further modification based on your directory for runing. Please be cautious to adjust the following parameters. Or you may encounter **out of memory**, **hang up** or **overflow (Nan during training)**: 
 
 ```bash
 NGPUS
@@ -269,9 +269,9 @@ Then you can use the following command to implement the RL training:
 
 ```bash
 # Start a new terminal
-conda activate DiagRL
-cd ./your/path/to/DiagRL/scripts/train
-bash trainDiagRL.sh
+conda activate Deep-DxSearch
+cd ./your/path/to/Deep-DxSearch/scripts/train
+bash trainDeep-DxSearch.sh
 ```
 
 ### Evaluation
@@ -280,8 +280,8 @@ Run the perforEval.py for accuracy assessment:
 
 ```bash
 # Start a new terminal
-conda activate DiagRL
-python ./your/path/to/DiagRL/scripts/eval/performEval.py
+conda activate Deep-DxSearch
+python ./your/path/to/Deep-DxSearch/scripts/eval/performEval.py
 ```
 
 
@@ -312,16 +312,16 @@ python ./your/path/to/DiagRL/scripts/eval/performEval.py
 
 **Medical Retrieval Collection.** This is borrowed from [MedRAG](https://github.com/Teddy-XiongGZ/MedRAG). We sincerely appreciate their impressive work!
 
-<img src="https://github.com/MAGIC-AI4Med/DiagRL/blob/main/assets/Retrieval.png"/> 
+<img src="https://github.com/MAGIC-AI4Med/Deep-DxSearch/blob/main/assets/Retrieval.png"/> 
 
 
 
 
 ## 🥇Benchmark
 
-We show the main results of DiagRL and compare it to other frameworks. For more details, please refer to our paper.
+We show the main results of Deep-DxSearch and compare it to other frameworks. For more details, please refer to our paper.
 
-<img src="https://github.com/MAGIC-AI4Med/DiagRL/blob/main/assets/comparison.png"/> 
+<img src="https://github.com/MAGIC-AI4Med/Deep-DxSearch/blob/main/assets/comparison.png"/> 
 
 
 **Table: Main diagnosis performance.**  
@@ -351,7 +351,7 @@ We use GPT-4o as the large language model base for MedRAG and MAC framework, for
 | MedRAG     | RAG-based      | 4.03          | 10.48         | 25.53             | 37.58             | 22.13           | 34.04           | 8.98          | 21.56         | 16.77           | 21.68           | 33.73           | 53.03           |
 | COD        | COT-Agent      | 0.81          | 7.26          | 11.35             | 21.99             | 70.64           | 90.64           | 4.19          | 19.16         | 2.99            | 11.98           | 2.41            | 8.43            |
 | MAC        | Multi-Agent    | 4.03          | 10.74         | 28.06             | 30.66             | 24.03           | 29.07           | 16.17         | 24.69         | 15.66           | 17.07           | 35.54           | 43.98           |
-| **DiagRL** | **Agentic RL** | **35.22**     | **46.83**     | **40.29**         | **47.75**         | **48.81**       | **60.04**       | **52.11**     | **64.57**     | **28.14**       | **39.22**       | **70.48**       | **82.96**       |
+| **Deep-DxSearch** | **Agentic RL** | **35.22**     | **46.83**     | **40.29**         | **47.75**         | **48.81**       | **60.04**       | **52.11**     | **64.57**     | **28.14**       | **39.22**       | **70.48**       | **82.96**       |
 
 
 
