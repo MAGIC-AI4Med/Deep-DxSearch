@@ -12,7 +12,7 @@
 
 We introduce **Deep-DxSearch**, focusing on clinical presentation-based diagnosis, which requires combinatorial analysis of symptoms, evidence-based associations between symptoms and diseases, and differential diagnosis ranking. Unlike prior inference-only agentic systems, Deep-DxSearch **jointly optimizes retrieval and reasoning in an end-to-end fashion**, enabling the development of retrieval-aware diagnostic strategies. It leverages a large language model (LLM) as the decision-making core and operates through five structured action modes—**reason, lookup, match, search, diagnose**—which support stepwise evidence acquisition and transparent clinical reasoning.
 
-Thus, **Deep-DxSearch** distinguishs former works on the real control of medical retrieval and reasoning.
+Thus, **Deep-DxSearch** distinguishs former works on the real control of medical retrieval and reasoning, covering both knowledge enhancement and, more critically, **similar case retrieval**.
 
 ## 💡Key Insights
 
