@@ -20,11 +20,11 @@ Thus, **Deep-DxSearch** distinguishs former works on the real control of medical
 - We open-source a large-scale [**disease-symptom(phenotype) guideline**](https://huggingface.co/datasets/QiaoyuZheng/DiagRL-Corpus/tree/main) based on reliable resources.  🤗
 - We open-source a processed [**patient record database**](https://huggingface.co/datasets/QiaoyuZheng/DiagRL-Corpus/tree/main) collected from 5 datasets. 🤗
 - We open-source our [**model checkpoint**](https://huggingface.co/QiaoyuZheng/DiagRL-7B) which trained on multi-center diagnosis tasks in Huggingface. We hope this can Promote the development of agentic disease diagnosis. 🤗
-- Diagnostic workflow with retrieval corpus and performance compared to SOTAs here:
+- For more details, please refer to our **blog** at https://qiaoyu-zheng.github.io/Deep-DxSearch
 
-<img src="https://github.com/MAGIC-AI4Med/Deep-DxSearch/blob/main/assets/performOverview.png"/> 
+<img src="https://github.com/MAGIC-AI4Med/Deep-DxSearch/blob/main/assets/teaser_3.gif"/> 
 
-
+<img src="https://github.com/MAGIC-AI4Med/Deep-DxSearch/blob/main/assets/grpo.png"/>
 
 
 ## ⚡Direct Usage
