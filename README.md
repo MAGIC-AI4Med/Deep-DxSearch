@@ -365,6 +365,17 @@ This training Implementation is based on [verl](https://github.com/volcengine/ve
 
 ## 📝Citation & Contact
 
-Citation is comming soon ...
+Thanks for your interest. If you find our code, model or data helpful, please cite:
+
+```
+
+@article{zheng2025end,
+  title={End-to-End Agentic RAG System Training for Traceable Diagnostic Reasoning},
+  author={Zheng, Qiaoyu and Sun, Yuze and Wu, Chaoyi and Zhao, Weike and Qiu, Pengcheng and Yu, Yongguo and Sun, Kun and Wang, Yanfeng and Zhang, Ya and Xie, Weidi},
+  journal={arXiv preprint arXiv:2508.15746},
+  year={2025}
+}
+
+```
 
 If you encounter any question, please raise a issue in this repository or directly contact three-world@sjtu.edu.cn
