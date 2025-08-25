@@ -6,7 +6,7 @@
 
 
 
-[![Notion](https://img.shields.io/badge/blog-black?style=for-the-badge&logo=github)]() [![Arxiv](https://img.shields.io/badge/paper-A82F27?style=for-the-badge&logo=arxiv)](https://arxiv.org/pdf/2508.15746) [![Model](https://img.shields.io/badge/model-4169E1?style=for-the-badge&logo=huggingface)](https://huggingface.co/QiaoyuZheng/DiagRL-7B) [![Data](https://img.shields.io/badge/data-808080?style=for-the-badge&logo=huggingface)](https://huggingface.co/datasets/QiaoyuZheng/DiagRL-Corpus) 
+[![Notion](https://img.shields.io/badge/blog-black?style=for-the-badge&logo=github)](https://qiaoyu-zheng.github.io/Deep-DxSearch) [![Arxiv](https://img.shields.io/badge/paper-A82F27?style=for-the-badge&logo=arxiv)](https://arxiv.org/pdf/2508.15746) [![Model](https://img.shields.io/badge/model-4169E1?style=for-the-badge&logo=huggingface)](https://huggingface.co/QiaoyuZheng/DiagRL-7B) [![Data](https://img.shields.io/badge/data-808080?style=for-the-badge&logo=huggingface)](https://huggingface.co/datasets/QiaoyuZheng/DiagRL-Corpus) 
 
 </div>
 
