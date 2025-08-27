@@ -33,7 +33,7 @@ You can use Deep-DxSearch through transformers format. The model can be loaded a
 
 ```python
 from transformers import AutoModelForCausalLM, AutoTokenizer
-model_name = "QiaoyuZheng/Deep-DxSearch-7B"
+model_name = "QiaoyuZheng/DiagRL-7B"
 model = AutoModelForCausalLM.from_pretrained(
     model_name,
     torch_dtype="auto",
