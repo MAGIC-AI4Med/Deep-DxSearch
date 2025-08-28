@@ -14,6 +14,8 @@ We introduce **Deep-DxSearch**, focusing on clinical presentation-based diagnosi
 
 Thus, **Deep-DxSearch** distinguishs former works on the real control of medical retrieval and reasoning, covering both knowledge enhancement and, more critically, **similar case retrieval**.
 
+_**Note that code is still under updating**_
+
 ## 💡Key Insights
 
 - We use the *LLM-based reinforcement learning* approach to enable the agent to learn ***when and how to retrieve information***, and ***how to optimize the reasoning paths*** through rule-based supervision tailored for diagnosis tasks. 🤖
