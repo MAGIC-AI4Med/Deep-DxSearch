@@ -14,7 +14,7 @@ We introduce **Deep-DxSearch**, focusing on clinical presentation-based diagnosi
 
 Thus, **Deep-DxSearch** distinguishs former works on the real control of medical retrieval and reasoning, covering both knowledge enhancement and, more critically, **similar case retrieval**.
 
-_**Note that code for evaluation and reproducing is still under updating...**_
+_**Note that code for evaluation and reproducing is being continuously updated.**_
 
 ## 💡Key Insights
 
