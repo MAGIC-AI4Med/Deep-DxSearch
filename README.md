@@ -16,6 +16,10 @@ Thus, **Deep-DxSearch** distinguishs former works on the real control of medical
 
 _**Note that code for evaluation and reproducing is being continuously updated.**_
 
+## 🌟 Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=MAGIC-AI4Med/Deep-DxSearch&type=Date)](https://www.star-history.com/#MAGIC-AI4Med/Deep-DxSearch&Date)
+
 ## 💡Key Insights
 
 - We use the *LLM-based reinforcement learning* approach to enable the agent to learn ***when and how to retrieve information***, and ***how to optimize the reasoning paths*** through rule-based supervision tailored for diagnosis tasks. 🤖
@@ -382,6 +386,3 @@ Thanks for your interest. If you find our code, model or data helpful, please ci
 
 If you encounter any question, please raise a issue in this repository or directly contact three-world@sjtu.edu.cn
 
-## 🌟 Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=MAGIC-AI4Med/Deep-DxSearch&type=Date)](https://www.star-history.com/#MAGIC-AI4Med/Deep-DxSearch&Date)
