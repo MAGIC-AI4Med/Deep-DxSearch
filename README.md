@@ -16,9 +16,6 @@ Thus, **Deep-DxSearch** distinguishs former works on the real control of medical
 
 _**Note that code for evaluation and reproducing is being continuously updated.**_
 
-## 🌟 Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=MAGIC-AI4Med/Deep-DxSearch&type=Date)](https://www.star-history.com/#MAGIC-AI4Med/Deep-DxSearch&Date)
 
 ## 💡Key Insights
 
@@ -381,6 +378,10 @@ Thanks for your interest. If you find our code, model or data helpful, please ci
   journal={arXiv preprint arXiv:2508.15746},
   year={2025}
 }
+
+## 🌟 Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=MAGIC-AI4Med/Deep-DxSearch&type=Date)](https://www.star-history.com/#MAGIC-AI4Med/Deep-DxSearch&Date)
 
 ```
 
