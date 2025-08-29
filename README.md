@@ -381,3 +381,7 @@ Thanks for your interest. If you find our code, model or data helpful, please ci
 ```
 
 If you encounter any question, please raise a issue in this repository or directly contact three-world@sjtu.edu.cn
+
+## 🌟 Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=MAGIC-AI4Med/Deep-DxSearch&type=Date)](https://www.star-history.com/#MAGIC-AI4Med/Deep-DxSearch&Date)
