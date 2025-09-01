@@ -385,4 +385,4 @@ If you encounter any question, please raise a issue in this repository or direct
 
 ## 🌟 Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=MAGIC-AI4Med/Deep-DxSearch&type=Date)](https://www.star-history.com/#MAGIC-AI4Med/Deep-DxSearch&Date)
+
