@@ -14,6 +14,9 @@ We introduce **Deep-DxSearch**, focusing on clinical presentation-based diagnosi
 
 Thus, **Deep-DxSearch** distinguishs former works on the real control of medical retrieval and reasoning, covering both knowledge enhancement and, more critically, **similar case retrieval**.
 
+_**Note that code for evaluation and reproducing is being continuously updated.**_
+
+
 ## 💡Key Insights
 
 - We use the *LLM-based reinforcement learning* approach to enable the agent to learn ***when and how to retrieve information***, and ***how to optimize the reasoning paths*** through rule-based supervision tailored for diagnosis tasks. 🤖
@@ -33,7 +36,7 @@ You can use Deep-DxSearch through transformers format. The model can be loaded a
 
 ```python
 from transformers import AutoModelForCausalLM, AutoTokenizer
-model_name = "QiaoyuZheng/Deep-DxSearch-7B"
+model_name = "QiaoyuZheng/DiagRL-7B"
 model = AutoModelForCausalLM.from_pretrained(
     model_name,
     torch_dtype="auto",
@@ -379,3 +382,7 @@ Thanks for your interest. If you find our code, model or data helpful, please ci
 ```
 
 If you encounter any question, please raise a issue in this repository or directly contact three-world@sjtu.edu.cn
+
+## 🌟 Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=MAGIC-AI4Med/Deep-DxSearch&type=Date)](https://www.star-history.com/#MAGIC-AI4Med/Deep-DxSearch&Date)
